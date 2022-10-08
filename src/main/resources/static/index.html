@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chat Room</title>
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+
+	<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+	<script src="/webjars/stomp-websocket/stomp.min.js"></script>
+	<script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/js/main.js"></script>
+
+</head>
+
+<body>
+	<div id="name-from" class="bg-primary d-flex align-items-center">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4 offset-md-4">
+					<div class="input-group">
+						<input type="text" id="name-value" autofocus placeholder="Enter your name" />
+						<div class="input-group-append">
+							<button class="btn btn-dark" id="enter">Enter</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="chat-from" class="bg-primary d-none">
+		<div class="container-fluid">
+			<div class="row">
+				<h3 class="text-white">Chat Room</h3>
+			</div>
+			<div class="row bg-light mychats">
+				<div class="col-md-8 offset-md-2">
+					<div class="card">
+						<div class="card-body">
+							<h2 id="user-text" class="p-3"></h2>
+							<div class="input-group">
+								<input type="text" id="send-value" autofocus placeholder="Enter your message" />
+								<div class="input-group-append">
+									<button class="btn btn-primary" id="send">Send</button>
+									<button class="btn btn-secondary" id="logout">Logout</button>
+								</div>
+							</div>
+							<div id="no_msg_err" class="col-md-6 d-none">
+								<span class="text-danger">Please Enter your message</span>
+							</div>
+							<div class="table-responsive">
+								<div id="messages-container" class="p-3">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

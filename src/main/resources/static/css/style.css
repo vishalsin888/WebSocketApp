@@ -1,0 +1,17 @@
+body{
+	background-color: rgb(73, 67, 188);
+}
+#name-from{
+	height: 100vh;
+}
+.mychats{
+	height:90vh ;
+}
+.dt{
+	text-align: right;
+	padding: 10px;
+	margin: 5px;
+}
+#user-text{
+	text-align: left;
+}
