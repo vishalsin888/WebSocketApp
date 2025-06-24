@@ -1,67 +1,59 @@
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Chat Room</title>
-	<link rel="stylesheet" href="/css/style.css">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title>Me|Chat</title>
+	<link rel="stylesheet" href="/css/style.css" />
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
-
-	<script src="/webjars/sockjs-client/sockjs.min.js"></script>
-	<script src="/webjars/stomp-websocket/stomp.min.js"></script>
 	<script src="/webjars/jquery/jquery.min.js"></script>
 	<script src="/js/main.js"></script>
-
 </head>
-
-<body>
-	<div id="name-from" class="bg-primary d-flex align-items-center">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-4 offset-md-4">
-					<div class="input-group">
-						<input type="text" id="name-value" autofocus placeholder="Enter your name" />
-						<div class="input-group-append">
-							<button class="btn btn-dark" id="enter">Enter</button>
-						</div>
-					</div>
+<body background="18.jpg"
+	style="background-position: center; background-repeat: no-repeat; background-size: cover;">
+	<noscript>
+		<h2>Sorry! Your browser doesn't support Javascript</h2>
+	</noscript>
+	<div id="username-page">
+		<div class="username-page-container">
+			<h1 class="title">Type your name</h1>
+			<form id="usernameForm" name="usernameForm">
+				<div class="form-group">
+					<input type="text" id="name" placeholder="Enter your name"
+						autocomplete="off" class="form-control" />
 				</div>
-			</div>
+				<div class="form-group">
+					<button type="submit" class="accent username-submit">Start
+						Chatting</button>
+				</div>
+			</form>
 		</div>
 	</div>
 
-	<div id="chat-from" class="bg-primary d-none">
-		<div class="container-fluid">
-			<div class="row">
-				<h3 class="text-white">Chat Room</h3>
+	<div id="chat-page">
+		<div class="chat-container">
+			<div class="chat-header">
+				<h2>Chat Group</h2>
 			</div>
-			<div class="row bg-light mychats">
-				<div class="col-md-8 offset-md-2">
-					<div class="card">
-						<div class="card-body">
-							<h2 id="user-text" class="p-3"></h2>
-							<div class="input-group">
-								<input type="text" id="send-value" autofocus placeholder="Enter your message" />
-								<div class="input-group-append">
-									<button class="btn btn-primary" id="send">Send</button>
-									<button class="btn btn-secondary" id="logout">Logout</button>
-								</div>
-							</div>
-							<div id="no_msg_err" class="col-md-6 d-none">
-								<span class="text-danger">Please Enter your message</span>
-							</div>
-							<div class="table-responsive">
-								<div id="messages-container" class="p-3">
-								</div>
-							</div>
-						</div>
+			<div class="connecting">Connecting...</div>
+			<ul id="messageArea">
+			</ul>
+			<form id="messageForm" name="messageForm" nameForm="messageForm">
+				<div class="form-group">
+					<div class="input-group clearfix">
+						<input type="text" id="message" placeholder="Type a message..."
+							autocomplete="off" class="form-control" />
+						<button type="submit" class="primary">Send</button>
 					</div>
 				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+	<script src="/js/main.js"></script>
 </body>
-
 </html>

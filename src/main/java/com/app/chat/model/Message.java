@@ -11,4 +11,9 @@ public class Message {
 	private String content;
 	private Date sentOn;
 	
+	public enum type{
+		CONTINUE,
+		JOINED,
+		LEFT
+	}
 }
